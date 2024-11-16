@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SteganoMafia</title>
+</head>
+<body>
+    <h1>Bienvenue sur SteganoMafia</h1>
+
+    <h2>Encoder un message dans une image</h2>
+    <form action="/encode" method="POST" enctype="multipart/form-data">
+        <label for="image">Choisir une image :</label>
+        <input type="file" name="image" id="image" accept="image/*" required>
+        <br><br>
+
+        <label for="message">Message à cacher :</label>
+        <textarea name="message" id="message" rows="4" cols="50" required></textarea>
+        <br><br>
+
+        <button type="submit">Encoder</button>
+    </form>
+
+    {% if image_path %}
+        <h2>Image encodée :</h2>
+        <img src="{{ image_path }}" alt="Image encodée" style="max-width: 400px;">
+        <br><br>
+        <a href="{{ image_path }}" download="encoded_image.png">
+            <button type="button">Télécharger l'image encodée</button>
+        </a>
+    {% endif %}
+
+    <hr>
+
+    <h2>Décoder un message depuis une image</h2>
+    <form action="/decode" method="POST" enctype="multipart/form-data">
+        <label for="image">Choisir une image :</label>
+        <input type="file" name="image" id="image" accept="image/*" required>
+        <br><br>
+
+        <button type="submit">Décoder</button>
+    </form>
+
+    {% if decoded_message %}
+        <h2>Message décodé :</h2>
+        <p>{{ decoded_message }}</p>
+    {% endif %}
+
+    {% if error %}
+        <h3 style="color: red;">Erreur : {{ error }}</h3>
+    {% endif %}
+</body>
+</html>
