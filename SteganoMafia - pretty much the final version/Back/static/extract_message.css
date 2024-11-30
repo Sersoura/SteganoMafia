@@ -1,0 +1,351 @@
+/* Réinitialisation de base */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background-color: #0f0f0f;
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #1f1f1f;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff0077;
+}
+
+.navbar a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.navbar a:hover {
+  color: #ff0077;
+}
+
+
+header,
+main {
+  margin: 0;
+  /* Supprimer les marges pour l'image directement sous le header */
+}
+
+/* Section pour l'image avec texte superposé */
+.image-with-text {
+  position: relative;
+  width: 100%;
+  /* L'image occupe toute la largeur de la page */
+  height: 300px;
+  /* Réduire la hauteur de l'image à 300px */
+  margin-top: 0;
+  /* Assurez-vous qu'il n'y a pas d'espace au-dessus de l'image */
+}
+
+.image-with-text .extract-image {
+  width: 100%;
+  /* L'image prend toute la largeur de la page */
+  height: 100%;
+  /* L'image prend toute la hauteur de son conteneur */
+  object-fit: cover;
+  /* Permet à l'image de s'ajuster sans être déformée */
+}
+
+.image-with-text .text-overlay {
+  position: absolute;
+  top: 50%;
+  /* Le texte commence au centre verticalement de l'image */
+  left: 0;
+  /* Aligner le texte à gauche */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  /* Centrer verticalement */
+  padding: 0 10%;
+  /* Ajouter un peu de marge de chaque côté */
+  transform: translateY(-50%);
+}
+
+.image-with-text .left-side {
+  flex: 1;
+  text-align: left;
+}
+
+.image-with-text .right-side {
+  flex: 1;
+  /* Partie droite vide */
+}
+
+.image-with-text h1 {
+  font-size: 3.5em;
+  /* Augmenter la taille du titre */
+  color: #fff;
+  margin: 0;
+}
+
+.image-with-text p {
+  font-size: 1.5em;
+  /* Réduire la taille de la description */
+  color: #fff;
+  margin-top: 10px;
+}
+
+/* Nouveau message sous le premier */
+.image-with-text .second-message {
+  font-size: 1.2em;
+  /* Taille de police plus petite que le titre */
+  margin-top: 20px;
+  /* Un peu d'espace entre le premier et le deuxième message */
+  color: #fff;
+  /* Couleur du texte */
+}
+
+/* Mise en page avec image à gauche et boutons à droite */
+.layout {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.upload-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-box {
+  width: 200px;
+  height: 200px;
+  background-color: #2b2b2b;
+  /* Couleur de fond plus sombre */
+  border: 2px dashed #555;
+  /* Bordure plus subtile */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+  color: #aaa;
+  border-radius: 12px;
+  /* Coins légèrement arrondis */
+  overflow: hidden;
+  /* Empêche le dépassement des images */
+  position: relative;
+  /* Nécessaire pour positionner l'input */
+  transition: all 0.3s ease-in-out;
+  /* Transition fluide */
+}
+
+.upload-box:hover {
+  border-color: #ff0099;
+  /* Bordure rose au survol */
+  background-color: #333;
+  /* Changement de couleur de fond */
+  transform: scale(1.05);
+  /* Légère mise en relief */
+}
+
+.upload-box img {
+  display: block;
+  /* Affiche l'image */
+  content: url('apl.png');
+  /* Charge l'image apl.png par défaut */
+  width: 100%;
+  /* L'image occupe toute la largeur de la boîte */
+  height: 100%;
+  /* L'image occupe toute la hauteur de la boîte */
+  object-fit: cover;
+  /* Garde les proportions de l'image */
+  border-radius: 12px;
+  /* Coins arrondis */
+}
+
+.upload-box img.visible {
+  display: block;
+  /* Affiche l'image quand elle a la classe visible */
+}
+
+.upload-box input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  /* Invisible */
+  cursor: pointer;
+  /* Change le curseur en mode pointer */
+}
+
+.upload-box:hover {
+  border-color: #ff0099;
+  /* Change la couleur de la bordure */
+  background-color: #333;
+  /* Change légèrement la couleur de fond */
+  transform: scale(1.05);
+  /* Ajoute un effet de zoom */
+}
+
+
+
+.button-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Style pour les boutons */
+.btn {
+  margin: 10px;
+  padding: 10px 30px;
+  /* Ajustez les espacements à gauche et à droite pour obtenir l'ovale */
+  border: none;
+  border-radius: 50px;
+  /* Rend les coins des boutons ovales */
+  background-color: #ff0099;
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #ff66b2;
+}
+
+
+/* Section du résultat */
+.output {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.output p {
+  font-size: 1.2em;
+}
+
+/* Footer */
+.footer {
+  background-color: #1f1f1f;
+  color: #fff;
+  padding: 2rem;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  /* Séparer la section gauche et droite */
+  align-items: center;
+  /* Centrer verticalement */
+  gap: 2rem;
+  /* Espace entre les sections */
+}
+
+.footer-left {
+  flex: 1;
+  /* Occupation pour équilibrer avec la section droite */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Centrer verticalement le contenu gauche */
+}
+
+.footer-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff0077;
+  margin-bottom: 0.5rem;
+}
+
+.footer-description {
+  font-size: 0.85rem;
+  color: #cccccc;
+  margin-bottom: 1rem;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  /* Liens affichés verticalement */
+  justify-content: center;
+  /* Centrer verticalement les liens */
+  align-items: flex-start;
+  /* Aligner à gauche */
+  gap: 0.5rem;
+}
+
+.footer-right a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.footer-right a:hover {
+  color: #ff0077;
+}
+
+.footer {
+  background-color: #222;
+  /* Couleur de fond du pied de page */
+  color: #fff;
+  /* Texte blanc */
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.footer-left,
+.footer-right {
+  flex: 1;
+}
+
+.footer-contact {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Centrer les éléments horizontalement */
+  justify-content: center;
+  /* Centrer les éléments verticalement */
+  gap: 10px;
+  /* Espacement entre les éléments */
+}
+
+.footer-email {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.footer-email:hover {
+  text-decoration: underline;
+}
+
+.social-icons a {
+  margin: 0 10px;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+}

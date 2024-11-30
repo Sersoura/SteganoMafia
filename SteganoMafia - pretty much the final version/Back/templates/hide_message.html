@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SteganoMafia</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='hide_message.css') }}">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">STEGANOMAFIA</div>
+        <nav class="navbar">
+            <a href="{{ url_for('HideMessage') }}">Hide a message</a>
+            <a href="{{ url_for('ExtractMessage') }}">Extract a message</a>
+            <a href="secure_sharing.html">Secure sharing</a>
+            <a href="{{ url_for('Faq') }}">Help/FAQ</a>
+            <a href="#">About</a>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="section">
+            <!-- Purple Banner -->
+            <div class="purple-banner">
+                <h1 class="title">Hide a message</h1>
+                <p class="subtitle">Securely hide your messages within images to protect your sensitive information.</p>
+            </div>
+
+            <!-- Main Section -->
+            <div class="container">
+                <form action="{{ url_for('encode') }}" method="POST" enctype="multipart/form-data" class="encode-form">
+                    <!-- Image Upload -->
+                    <div class="form-group">
+                        <label for="image-upload">Upload Image:</label>
+                        <input type="file" id="image-upload" name="image" accept="image/*" required>
+                    </div>
+
+                    <!-- Message Input -->
+                    <div class="form-group">
+                        <label for="message-input">Message to Hide:</label>
+                        <textarea id="message-input" name="message" placeholder="Enter your message here" required></textarea>
+                    </div>
+
+                    <!-- Security Level Dropdown -->
+                    <div class="form-group">
+                        <label for="security-level">Select Security Level:</label>
+                        <select id="security-level" name="encryption_type" required>
+                            <option value="AES-128">Basic</option>
+                            <option value="AES-192">Intermediate</option>
+                            <option value="AES-256">Advanced</option>
+                        </select>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn submit-btn">Encode Message</button>
+                </form>
+
+                {% if error %}
+                <p style="color: red;">{{ error }}</p>
+            {% endif %}
+     
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Left Section -->
+            <div class="footer-left">
+                <div class="footer-logo">STEGANOMAFIA</div>
+                <p class="footer-description">SteganoMafia is a secure platform for hiding, protecting, and sharing<br>
+                    confidential messages through steganography and encryption.</p>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="footer-contact">
+                <a href="mailto:support@steganomafia.com" class="footer-email">support@steganomafia.com</a>
+                <div class="social-icons">
+                    <a href="#"><img src="{{ url_for('static', filename='linkedin.png') }}" alt="LinkedIn"></a>
+                    <a href="#"><img src="{{ url_for('static', filename='twitter.png') }}" alt="X"></a>
+                </div>
+            </div>
+
+            <!-- Right Section -->
+            <div class="footer-right">
+                <a href="#">About</a>
+                <a href="{{ url_for('Faq') }}">Help/FAQ</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

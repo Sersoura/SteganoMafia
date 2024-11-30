@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Expired</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='operation_succ.css') }}">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">STEGANOMAFIA</div>
+        <nav class="navbar">
+            <a href="{{ url_for('HideMessage') }}">Hide a message</a>
+            <a href="{{ url_for('ExtractMessage') }}">Extract a message</a>
+            <a href="secure_sharing.html">Secure sharing</a>
+            <a href="{{ url_for('Faq') }}">Help/FAQ</a>
+            <a href="#">About</a>
+        </nav>
+    </header>
+
+
+    <main>
+        <div class="content">
+            <h1 class="message" role="alert">Operation Successeful!</h1>
+            <!-- Message sous le titre -->
+            <p>Your message has been successfuly </p>
+ 
+            {% if encoded_image %}
+            <p>L'image a été encodée avec succès.</p>
+            <a href="{{ encoded_image }}">Télécharger l'image encodée</a>
+            <p>Clé générée : {{ generated_key }}</p>
+            <p>Lien temporaire : <a href="{{ share_link }}">{{ share_link }}</a></p>
+            {% endif %}
+
+            {% if decoded_message %}
+            <p>Your message is:</p>
+            <span id="message">{{ decoded_message }}</span>
+            {% endif %}
+        </div>
+    </main>
+
+    <!-- Pied de page -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Section gauche : Logo et description -->
+            <div class="footer-left">
+                <div class="footer-logo">STEGANOMAFIA</div>
+                <p class="footer-description">SteganoMafia is a secure platform for hiding, protecting, and sharing<br>
+                    confidential messages through steganography and encryption.</p>
+            </div>
+
+            <!-- Section milieu : Contact -->
+            <div class="footer-contact">
+                <a href="mailto:support@steganomafia.com" class="footer-email">support@steganomafia.com</a>
+                <div class="social-icons">
+                    <a href="#"><img src="{{ url_for('static', filename='linkedin.png') }}" alt="LinkedIn"></a>
+                    <a href="#"><img src="{{ url_for('static', filename='twitter.png') }}" alt="Twitter"></a>
+                </div>
+            </div>
+
+            <!-- Section droite : Liens -->
+            <div class="footer-right">
+                <a href="#">About</a>
+                <a href="{{ url_for('Faq') }}">Help/FAQ</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

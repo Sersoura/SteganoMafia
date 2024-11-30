@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SteganoMafia FAQ</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='faq.css') }}"> <!-- Lien vers le CSS séparé -->
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">STEGANOMAFIA</div>
+    <nav class="navbar">
+      <a href="{{ url_for('HideMessage') }}">Hide a message</a>
+      <a href="{{ url_for('ExtractMessage') }}">Extract a message</a>
+      <a href="secure_sharing.html">Secure sharing</a>
+      <a href="{{ url_for('Faq') }}">Help/FAQ</a>
+      <a href="#">About</a>
+    </nav>
+  </header>
+
+  <section class="faq-section">
+    <h1>FAQ</h1>
+    <p>These are the most frequently asked questions. If you have any questions, please contact us.</p>
+    <div class="faq-items">
+      <div class="faq-item">
+        <p>Q: How do I hide a message in an image?</p>
+        <div class="faq-answer">To hide a message, use the “Hide a message” feature and upload your image along with the
+          secret text.</div>
+      </div>
+      <div class="faq-item">
+        <p>Q: How do I extract a message from an image?</p>
+        <div class="faq-answer">Upload the image with the hidden message and click on “Extract message” to retrieve the
+          text.</div>
+      </div>
+      <div class="faq-item">
+        <p>Q: What is secure sharing, and how does it work?</p>
+        <div class="faq-answer">Secure sharing generates temporary, encrypted links for sharing sensitive information.
+        </div>
+      </div>
+      <div class="faq-item">
+        <p>Q: How long are temporary links valid?</p>
+        <div class="faq-answer">Temporary links are valid for up to 24 hours, after which they expire automatically.
+        </div>
+      </div>
+      <div class="faq-item">
+        <p>Q: Are my data and messages secure?</p>
+        <div class="faq-answer">Yes, all data is encrypted and securely transmitted to ensure your privacy.</div>
+      </div>
+      <div class="faq-item">
+        <p>Q: What types of files can I use?</p>
+        <div class="faq-answer">You can use common image formats like PNG and JPEG to hide or extract messages.</div>
+      </div>
+      <div class="faq-item">
+        <p>Q: I forgot my encryption key. What should I do?</p>
+        <div class="faq-answer">Unfortunately, without the encryption key, it's not possible to retrieve the hidden
+          message.</div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Sélectionner tous les éléments FAQ
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        // Vérifie si l'élément est déjà ouvert
+        const isOpen = item.classList.contains("open");
+
+        // Ferme tous les autres éléments
+        faqItems.forEach((i) => i.classList.remove("open"));
+
+        // Si ce n'était pas ouvert, l'ouvrir
+        if (!isOpen) {
+          item.classList.add("open");
+        }
+      });
+    });
+  </script>
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Section gauche : Logo et description -->
+      <div class="footer-left">
+        <div class="footer-logo">STEGANOMAFIA</div>
+        <p class="footer-description">SteganoMafia is a secure platform for hiding, protecting, and sharing<br>
+          confidential messages through steganography and encryption.</p>
+      </div>
+
+      <!-- Section milieu : Contact -->
+      <div class="footer-contact">
+        <a href="mailto:support@steganomafia.com" class="footer-email">support@steganomafia.com</a>
+        <div class="social-icons">
+          <a href="#"><img src="{{ url_for('static', filename='linkedin.png') }}" alt="LinkedIn"></a>
+          <a href="#"><img src="{{ url_for('static', filename='twitter.png') }}" alt="X"></a>
+        </div>
+      </div>
+
+      <!-- Section droite : Liens -->
+      <div class="footer-right">
+        <a href="#">About</a>
+        <a href="{{ url_for('Faq') }}">Help/FAQ</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

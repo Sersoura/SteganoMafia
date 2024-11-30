@@ -1,0 +1,219 @@
+/* ===============================
+   1. Réinitialisation et styles globaux
+   =============================== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background-color: #0f0f0f;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Assure que le footer reste en bas */
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #1f1f1f;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff0077;
+}
+
+.navbar a {
+    margin-left: 1rem;
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.navbar a:hover {
+    color: #ff0077;
+}
+
+
+header,
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.message {
+    color: #3890cb;
+    font-size: 2.5rem;
+    /* Taille du titre principale */
+    margin-bottom: 30px;
+    /* Réduction de l'espacement */
+}
+
+p {
+    color: #cccccc;
+    font-size: 1rem;
+    margin-bottom: 40px;
+    /* Ajout d'espace entre le message et les boutons */
+}
+
+/* Styles pour les boutons dans le contenu principal */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    /* Ajuste l'espacement entre les boutons */
+    margin-top: 30px;
+}
+
+.btn {
+    padding: 12px 30px;
+    /* Ajuste la taille des boutons */
+    background-color: #3890cb;
+    /* Couleur de fond */
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 50px;
+    /* Le radius élevé crée l'effet ovale */
+    transition: background-color 0.3s, transform 0.2s;
+    width: 200px;
+    /* Définit la largeur des boutons pour qu'ils soient identiques */
+    text-align: center;
+    /* Centre le texte à l'intérieur du bouton */
+}
+
+.btn:hover {
+    background-color: #2977a6;
+    transform: scale(1.05);
+    /* Effet de zoom */
+}
+
+.btn:active {
+    transform: scale(0.95);
+    /* Réduction au clic */
+}
+
+
+/* ===============================
+   5. Footer
+   =============================== */
+.footer {
+    background-color: #1f1f1f;
+    color: #fff;
+    padding: 2rem;
+    margin-top: auto;
+    /* Assure que le footer colle au bas */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.footer-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff0077;
+    margin-bottom: 0.5rem;
+}
+
+.footer-description {
+    font-size: 0.85rem;
+    color: #cccccc;
+    margin-bottom: 1rem;
+}
+
+.footer-contact {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-email {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.footer-email:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+}
+
+.footer-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.footer-right a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.footer-right a:hover {
+    color: #ff0077;
+}
+
+/* ===============================
+   6. Styles responsives (petits écrans)
+   =============================== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav {
+        margin-top: 10px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .footer-contact {
+        align-items: center;
+    }
+
+    .footer-right {
+        align-items: center;
+    }
+}

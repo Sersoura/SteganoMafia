@@ -1,0 +1,292 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #1f1f1f;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff0077;
+}
+
+.navbar a {
+    margin-left: 1rem;
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.navbar a:hover {
+    color: #ff0077;
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: url('Blockchain technology cartoon illustration.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+header,
+footer {
+    background: #1f1f1f;
+    /* Assure que le header et le footer ont un fond uni */
+    position: relative;
+    /* Pour s'assurer qu'ils se superposent au fond */
+    z-index: 1;
+    /* Place le header et le footer au-dessus du fond */
+}
+
+.main-section {
+    padding: 50px;
+    background: rgba(11, 15, 25, 0.9);
+    /* Ajoute une couleur semi-transparente */
+    border-radius: 20px;
+    position: relative;
+    /* Assure que son contenu reste bien positionné */
+    z-index: 2;
+    /* Place le contenu de la section principale au-dessus */
+}
+
+/* Main Section */
+/* Main Section */
+.main-section {
+    padding: 50px;
+    background-color: #0b0f19;
+    color: #fff;
+    position: relative;
+    /* Nécessaire pour l'image en arrière-plan */
+}
+
+.main-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('Blockchain technology cartoon illustration.png') no-repeat center center fixed;
+    background-size: cover;
+    filter: blur(3px);
+    /* Applique un flou à l'image */
+    z-index: -1;
+    /* Assure que l'image est derrière le contenu */
+}
+
+
+/* Logo and Text on the Left */
+.logo-right {
+    text-align: left;
+    /* Aligner tout le contenu à gauche */
+    margin-left: 20px;
+    /* Ajouter une marge à gauche pour espacer */
+}
+
+.logo-right h1 {
+    font-size: 2.5rem;
+    color: #fff8fa;
+    margin-bottom: 10px;
+    /* Espacement sous le logo */
+}
+
+.logo-right p {
+    max-width: 400px;
+    /* Largeur maximale du texte pour une mise en page propre */
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #cccccc;
+}
+
+
+
+/* Features Section */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+    padding: 0 20px;
+}
+
+/* Feature Boxes */
+.feature {
+    background: rgba(21, 26, 40, 0.6);
+    /* Semi-transparent effect */
+    backdrop-filter: blur(8px);
+    /* Blurry effect */
+    padding: 20px;
+    border-radius: 20px;
+    /* Rounded corners */
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: scale(1.05);
+    /* Slight zoom effect on hover */
+}
+
+.feature h3 {
+    color: #f02d65;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 0.9rem;
+    color: #cccccc;
+    margin-bottom: 15px;
+}
+
+/* Buttons */
+.feature button {
+    background-color: #f02d65;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    /* Oval shape */
+    padding: 10px 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.feature button:hover {
+    background-color: #ff4b8a;
+}
+
+footer {
+    background: #1f1f1f;
+    position: relative;
+    z-index: 1;
+}
+
+/* Footer */
+.footer {
+    background-color: #1f1f1f;
+    color: #fff;
+    padding: 2rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    /* Séparer la section gauche et droite */
+    align-items: center;
+    /* Centrer verticalement */
+    gap: 2rem;
+    /* Espace entre les sections */
+}
+
+.footer-left {
+    flex: 1;
+    /* Occupation pour équilibrer avec la section droite */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Centrer verticalement le contenu gauche */
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff0077;
+    margin-bottom: 0.5rem;
+}
+
+.footer-description {
+    font-size: 0.85rem;
+    color: #cccccc;
+    margin-bottom: 1rem;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    /* Liens affichés verticalement */
+    justify-content: center;
+    /* Centrer verticalement les liens */
+    align-items: flex-start;
+    /* Aligner à gauche */
+    gap: 0.5rem;
+}
+
+.footer-right a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.footer-right a:hover {
+    color: #ff0077;
+}
+
+.footer {
+    background-color: #222;
+    /* Couleur de fond du pied de page */
+    color: #fff;
+    /* Texte blanc */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.footer-left,
+.footer-right {
+    flex: 1;
+}
+
+.footer-contact {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centrer les éléments horizontalement */
+    justify-content: center;
+    /* Centrer les éléments verticalement */
+    gap: 10px;
+    /* Espacement entre les éléments */
+}
+
+.footer-email {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.footer-email:hover {
+    text-decoration: underline;
+}
+
+.social-icons a {
+    margin: 0 10px;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+}

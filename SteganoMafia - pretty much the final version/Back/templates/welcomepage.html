@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SteganoMafia</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='welcomepage.css') }}">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">STEGANOMAFIA</div>
+        <nav class="navbar">
+            <a href="{{ url_for('HideMessage') }}">Hide a message</a>
+            <a href="{{ url_for('ExtractMessage') }}">Extract a message</a>
+            <a href="secure_sharing.html">Secure sharing</a>
+            <a href="{{ url_for('Faq') }}">Help/FAQ</a>
+            <a href="#">About</a>
+        </nav>
+    </header>
+
+    <body>
+        <main class="main-section">
+            <div class="intro">
+                <div class="logo-right">
+                    <h1>STEGANOMAFIA</h1>
+                    <p>
+                        Securely hide, protect, and share secret messages. Using steganography
+                        and encryption, you can conceal information within images.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Feature Boxes -->
+            <div class="features">
+                <div class="feature">
+                    <h3>Hide a message</h3>
+                    <p>Secretly embed messages in your images.</p>
+                    <form action="{{ url_for('HideMessage') }}">
+                        <button type="submit">Hide Now</button>
+                    </form>
+                </div>
+                <div class="feature">
+                    <h3>Extract a message</h3>
+                    <p>Retrieve hidden messages with a key.</p>
+                    <form action="{{ url_for('ExtractMessage') }}">
+                        <button>Extract Now</button>
+                    </form>
+                </div>
+                <div class="feature">
+                    <h3>Secure sharing</h3>
+                    <p>Share modified images via a secure link.</p>
+                    <form action="secure_sharing.html">
+                        <button>Share Now</button>
+                    </form>
+                </div>
+                <div class="feature">
+                    <h3>Help & FAQ</h3>
+                    <p>Check our guide for assistance.</p>
+                    <form action="{{ url_for('Faq') }}">
+                        <button>View guide</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+
+
+        <footer class="footer">
+            <div class="footer-container">
+                <!-- Section gauche : Logo et description -->
+                <div class="footer-left">
+                    <div class="footer-logo">STEGANOMAFIA</div>
+                    <p class="footer-description">SteganoMafia is a secure platform for hiding, protecting, and
+                        sharing<br>
+                        confidential messages through steganography and encryption.</p>
+                </div>
+
+                <!-- Section milieu : Contact -->
+                <div class="footer-contact">
+                    <a href="mailto:support@steganomafia.com" class="footer-email">support@steganomafia.com</a>
+                    <div class="social-icons">
+                        <a href="#"><img src="{{ url_for('static', filename='linkedin.png') }}" alt="LinkedIn"></a>
+                        <a href="#"><img src="{{ url_for('static', filename='twitter.png') }}" alt="X"></a>
+                    </div>
+                </div>
+
+                <!-- Section droite : Liens -->
+                <div class="footer-right">
+                    <a href="#">About</a>
+                    <a href="{{ url_for('Faq') }}">Help/FAQ</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+        </footer>
+
+
+
+    </body>
+
+</html>

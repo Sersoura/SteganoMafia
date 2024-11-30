@@ -1,0 +1,348 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0f0f0f;
+  color: #fff;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #1e1e1e;
+}
+
+header .logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #ff0099;
+}
+
+header nav {
+  display: flex;
+  gap: 20px;
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+/* Style de base des liens dans le nav */
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+  /* Transition pour un changement de couleur fluide */
+}
+
+/* Style quand la souris est positionnée sur un lien */
+header nav a:hover {
+  color: #ff0099;
+  /* Changer la couleur ici lors du survol */
+}
+
+/* Style pour la page active */
+header nav a.active {
+  color: #ff0099;
+  /* Couleur rose pour la page active */
+  font-weight: bold;
+  /* Facultatif : met le texte en gras */
+}
+
+/* Image juste sous le header */
+.hero-image {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Garantit que l'image couvre toute la zone */
+}
+
+/* Texte superposé sur l'image */
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  /* Texte en blanc */
+  font-size: 3em;
+  /* Taille du texte */
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  /* Ombre pour rendre le texte plus lisible */
+  letter-spacing: 1px;
+}
+
+/* Main Section */
+main {
+  padding: 40px 20px;
+  background-color: #0f0f0f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Content Section */
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 800px;
+  gap: 20px;
+}
+
+/* Upload Section */
+.upload-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+
+.upload-box {
+  width: 300px;
+  /* Ajustez la largeur de la div */
+  height: 150px;
+  /* Ajustez la hauteur de la div */
+  background-color: #444;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed #888;
+  overflow: hidden;
+  /* Cela garantit que l'image ne dépasse pas la div */
+}
+
+.upload-image {
+  width: 100%;
+  /* L'image occupe toute la largeur de la div */
+  height: 100%;
+  /* L'image occupe toute la hauteur de la div */
+  object-fit: cover;
+  /* Cela permet à l'image de couvrir toute la div sans déformation */
+}
+
+/* Right Section */
+/* Right Section */
+.right-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* Contrôle l'espacement entre les boutons */
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 20px;
+  /* Espace à gauche de la section */
+  margin-top: 30px;
+  /* Ajoute un espace au-dessus pour descendre les boutons */
+}
+
+
+.right-section .btn:nth-child(2) {
+  margin-top: 20px;
+  /* Ajustez la valeur pour descendre le deuxième bouton */
+}
+
+.right-section .btn:last-child {
+  margin-top: 20px;
+  /* Ajustez la valeur pour descendre le dernier bouton */
+  margin-left: -75px;
+}
+
+/* Button Styles (Reusable) */
+.btn {
+  padding: 12px 30px;
+  /* Augmenter les valeurs de padding pour donner un aspect ovale */
+  border-radius: 30px;
+  /* Cela rend les boutons ovales */
+  border: none;
+  font-size: 14px;
+  background-color: #007799;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #005f5f;
+}
+
+/* Sélecteur de la durée du lien */
+.upload-section .btn {
+  width: 200px;
+  padding: 12px;
+  border-radius: 30px;
+  /* Bouton ovale */
+  border: none;
+  font-size: 14px;
+  background-color: #007799;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.upload-section .btn:hover {
+  background-color: #005f5f;
+}
+
+/* Bottom Section */
+.bottom-section {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.bottom-section .btn {
+  width: 200px;
+  padding: 12px;
+  border-radius: 30px;
+  /* Bouton ovale */
+  border: none;
+  font-size: 14px;
+  background-color: #007799;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.bottom-section .btn:hover {
+  background-color: #005f5f;
+}
+
+/* Footer */
+.footer {
+  background-color: #1f1f1f;
+  color: #fff;
+  padding: 2rem;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  /* Séparer la section gauche et droite */
+  align-items: center;
+  /* Centrer verticalement */
+  gap: 2rem;
+  /* Espace entre les sections */
+}
+
+.footer-left {
+  flex: 1;
+  /* Occupation pour équilibrer avec la section droite */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Centrer verticalement le contenu gauche */
+}
+
+.footer-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff0077;
+  margin-bottom: 0.5rem;
+}
+
+.footer-description {
+  font-size: 0.85rem;
+  color: #cccccc;
+  margin-bottom: 1rem;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  /* Liens affichés verticalement */
+  justify-content: center;
+  /* Centrer verticalement les liens */
+  align-items: flex-start;
+  /* Aligner à gauche */
+  gap: 0.5rem;
+}
+
+.footer-right a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.footer-right a:hover {
+  color: #ff0077;
+}
+
+.footer {
+  background-color: #222;
+  /* Couleur de fond du pied de page */
+  color: #fff;
+  /* Texte blanc */
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.footer-left,
+.footer-right {
+  flex: 1;
+}
+
+.footer-contact {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Centrer les éléments horizontalement */
+  justify-content: center;
+  /* Centrer les éléments verticalement */
+  gap: 10px;
+  /* Espacement entre les éléments */
+}
+
+.footer-email {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.footer-email:hover {
+  text-decoration: underline;
+}
+
+.social-icons a {
+  margin: 0 10px;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+}

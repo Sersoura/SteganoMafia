@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SteganoMafia - Secure Sharing</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='temporary_link.css') }}">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">STEGANOMAFIA</div>
+    <nav class="navbar">
+      <a href="{{ url_for('HideMessage') }}">Hide a message</a>
+      <a href="{{ url_for('ExtractMessage') }}">Extract a message</a>
+      <a href="secure_sharing.html">Secure sharing</a>
+      <a href="{{ url_for('Faq') }}">Help/FAQ</a>
+      <a href="#">About</a>
+    </nav>
+  </header>
+
+  <!-- Hero Image Section -->
+  <section class="hero-image">
+    <div class="overlay-text">GENERATE A SECURE SHARING LINK</div>
+    <img src="{{ url_for('static', filename='gris.png') }}" alt="Description de l'image">
+  </section>
+
+  <!-- Main Section -->
+  <main>
+    <section class="content">
+      {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    {% if link %}
+        <p>Votre lien temporaire : <a href="{{ link }}">{{ link }}</a></p>
+    {% else %}
+        <form method="POST">
+            <label for="password">Choisissez un mot de passe pour sécuriser le lien :</label><br>
+            <input type="password" id="password" name="password" required><br>
+            <button type="submit">Générer le lien</button>
+        </form>
+    {% endif %}
+
+    {% if not link %}
+        <h2>Accéder via le lien temporaire</h2>
+        <form method="POST">
+            <label for="password">Mot de passe :</label><br>
+            <input type="password" id="password" name="password" required><br>
+            <button type="submit">Télécharger</button>
+        </form>
+    {% endif %}
+      
+    </section>
+
+    <!-- Bottom Button -->
+    <div class="bottom-section">
+      <button class="btn">Copy Link</button>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <!-- Pied de page -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Section gauche : Logo et description -->
+      <div class="footer-left">
+        <div class="footer-logo">STEGANOMAFIA</div>
+        <p class="footer-description">SteganoMafia is a secure platform for hiding, protecting, and sharing<br>
+          confidential messages through steganography and encryption.</p>
+      </div>
+
+      <!-- Section milieu : Contact -->
+      <div class="footer-contact">
+        <a href="mailto:support@steganomafia.com" class="footer-email">support@steganomafia.com</a>
+        <div class="social-icons">
+          <a href="#"><img src="linkedin.png" alt="LinkedIn"></a>
+          <a href="#"><img src="twitter.png" alt="X"></a>
+        </div>
+      </div>
+
+      <!-- Section droite : Liens -->
+      <div class="footer-right">
+        <a href="#">About</a>
+        <a href="{{ url_for('Faq') }}">Help/FAQ</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

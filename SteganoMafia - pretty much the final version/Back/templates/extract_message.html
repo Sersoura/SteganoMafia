@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SteganoMafia - Extract a Hidden Message</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='extract_message.css') }}">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">STEGANOMAFIA</div>
+    <nav class="navbar">
+      <a href="{{ url_for('HideMessage') }}">Hide a message</a>
+      <a href="{{ url_for('ExtractMessage') }}">Extract a message</a>
+      <a href="secure_sharing.html">Secure sharing</a>
+      <a href="{{ url_for('Faq') }}">Help/FAQ</a>
+      <a href="#">About</a>
+    </nav>
+  </header>
+
+
+  <!-- Contenu principal -->
+  <main>
+    <!-- Section pour l'image avec texte superposé -->
+    <div class="image-with-text">
+      <img src="{{ url_for('static', filename='faq.png') }}" alt="Image de démonstration" class="extract-image">
+      <div class="text-overlay">
+        <div class="left-side">
+          <h1>Extract a Hidden Message</h1> <!-- Premier message -->
+          <p>Upload an image and enter your encryption key to retrieve your message</p> <!-- Deuxième message -->
+          <p class="second-message">Enter the key and click "Extract Message" to view the hidden content.</p>
+          <!-- Troisième message -->
+        </div>
+        <div class="right-side">
+          <!-- Partie droite vide -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Section for extraction -->
+<section class="extract-section">
+  <div class="layout">
+    <!-- Image upload and key input form -->
+    <form action="{{ url_for('decode') }}" method="POST" enctype="multipart/form-data" class="extract-form">
+      <!-- Image upload -->
+      <div class="upload-container">
+        <div class="upload-box">
+          <img src="{{ url_for('static', filename='upload.png') }}" alt="Preview Image" id="image-preview">
+          <input type="file" name="image" id="file-input" accept="image/*" required>
+        </div>
+      </div>
+      <!-- Key input and extract button -->
+      <div class="button-container">
+        <label for="key-input" class="btn" id="upload-key">
+          Enter the encryption key
+        </label>
+        <input type="text" name="key" id="key-input" placeholder="Enter your encryption key" required>
+        <button type="submit" class="btn" id="extract-message">Extract Message</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="output">
+
+    {% if error %}
+      <p class="error">{{ error }}</p>
+    {% endif %}
+  </div>
+</section>
+
+  </main>
+
+  <!-- Pied de page -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Section gauche : Logo et description -->
+      <div class="footer-left">
+        <div class="footer-logo">STEGANOMAFIA</div>
+        <p class="footer-description">SteganoMafia is a secure platform for hiding, protecting, and sharing<br>
+          confidential messages through steganography and encryption.</p>
+      </div>
+
+      <!-- Section milieu : Contact -->
+      <div class="footer-contact">
+        <a href="mailto:support@steganomafia.com" class="footer-email">support@steganomafia.com</a>
+        <div class="social-icons">
+          <a href="#"><img src="{{ url_for('static', filename='linkedin.png') }}" alt="LinkedIn"></a>
+          <a href="#"><img src="{{ url_for('static', filename='twitter.png') }}" alt="X"></a>
+        </div>
+      </div>
+
+      <!-- Section droite : Liens -->
+      <div class="footer-right">
+        <a href="#">About</a>
+        <a href="{{ url_for('Faq') }}">Help/FAQ</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+  <!-- Lien vers le fichier JavaScript -->
+</body>
+
+</html>

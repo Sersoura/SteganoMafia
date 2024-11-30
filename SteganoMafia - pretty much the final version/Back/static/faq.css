@@ -1,0 +1,232 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background-color: #121212;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #1f1f1f;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff0077;
+}
+
+.navbar a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.navbar a:hover {
+  color: #ff0077;
+}
+
+
+header,
+
+/* FAQ Section */
+.faq-section {
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.faq-section h1 {
+  color: #ff0080;
+  margin-bottom: 10px;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.faq-section p {
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  color: #aaa;
+}
+
+.faq-items {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.faq-item {
+  margin: 5px 0;
+  padding: 10px 15px;
+  border-bottom: 1px solid #333;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.faq-item:hover {
+  background-color: #222;
+  color: #fff;
+}
+
+/* Flèche (Arrow) */
+.faq-item::after {
+  content: "▼";
+  font-size: 0.8rem;
+  color: #ff0080;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease;
+  /* Animation pour faire pivoter la flèche */
+}
+
+.faq-item.open::after {
+  transform: translateY(-50%) rotate(180deg);
+  /* Flèche vers le haut quand ouverte */
+}
+
+/* Réponse (Answer) */
+.faq-answer {
+  display: none;
+  /* Réponses masquées par défaut */
+  color: #aaa;
+  font-size: 0.85rem;
+  margin-top: 5px;
+  line-height: 1.5;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  /* Animation d'ouverture/fermeture */
+  max-height: 0;
+  /* Hauteur maximale initiale */
+}
+
+.faq-item.open .faq-answer {
+  display: block;
+  max-height: 100px;
+}
+
+/* Footer */
+.footer {
+  background-color: #1f1f1f;
+  color: #fff;
+  padding: 2rem;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  /* Séparer la section gauche et droite */
+  align-items: center;
+  /* Centrer verticalement */
+  gap: 2rem;
+  /* Espace entre les sections */
+}
+
+.footer-left {
+  flex: 1;
+  /* Occupation pour équilibrer avec la section droite */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Centrer verticalement le contenu gauche */
+}
+
+.footer-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff0077;
+  margin-bottom: 0.5rem;
+}
+
+.footer-description {
+  font-size: 0.85rem;
+  color: #cccccc;
+  margin-bottom: 1rem;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  /* Liens affichés verticalement */
+  justify-content: center;
+  /* Centrer verticalement les liens */
+  align-items: flex-start;
+  /* Aligner à gauche */
+  gap: 0.5rem;
+}
+
+.footer-right a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.footer-right a:hover {
+  color: #ff0077;
+}
+
+.footer {
+  background-color: #222;
+  /* Couleur de fond du pied de page */
+  color: #fff;
+  /* Texte blanc */
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.footer-left,
+.footer-right {
+  flex: 1;
+}
+
+.footer-contact {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Centrer les éléments horizontalement */
+  justify-content: center;
+  /* Centrer les éléments verticalement */
+  gap: 10px;
+  /* Espacement entre les éléments */
+}
+
+.footer-email {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.footer-email:hover {
+  text-decoration: underline;
+}
+
+.social-icons a {
+  margin: 0 10px;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+}
